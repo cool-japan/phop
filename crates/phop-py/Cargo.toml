@@ -2,7 +2,7 @@
 name = "phop-py"
 # Ships to PyPI via maturin (pypi-publish.yml); not published to crates.io
 publish = false
-version.workspace = true
+version = "0.1.0"
 edition.workspace = true
 license.workspace = true
 authors.workspace = true
@@ -23,5 +23,5 @@ test = false
 [dependencies]
 phop-core.workspace = true
 scirs2-core.workspace = true
-pyo3 = { version = "0.29", features = ["extension-module"] }
+pyo3 = { version = "0.29", features = ["extension-module", "abi3-py39"] }
 numpy = "0.29"

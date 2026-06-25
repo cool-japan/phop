@@ -1973,7 +1973,7 @@ dependencies = [
 
 [[package]]
 name = "phop-py"
-version = "0.1.1"
+version = "0.1.0"
 dependencies = [
  "numpy",
  "phop-core 0.1.1",
