@@ -1,5 +1,6 @@
 [workspace]
 members = [
+    "crates/phop",
     "crates/phop-core",
     "crates/phop-cli",
     "crates/phop-examples",
@@ -11,6 +12,7 @@ members = [
 # `phop-py` (PyO3 extension module) and `phop-wasm` (wasm32 cdylib) produce non-native artifacts
 # that are built explicitly via maturin / wasm-pack, so they are excluded from the default set.
 default-members = [
+    "crates/phop",
     "crates/phop-core",
     "crates/phop-cli",
     "crates/phop-examples",

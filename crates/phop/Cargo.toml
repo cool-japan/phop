@@ -1,0 +1,20 @@
+[package]
+name = "phop"
+# Seeded at the family's release version (0.1.0). Explicit (not version.workspace) so the
+# façade can be published at 0.1.0 while the workspace dev line is already at 0.1.1.
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation = "https://docs.rs/phop"
+description = "Façade for phop: differentiable symbolic discovery on the EML operator (re-exports phop-core; CLI in phop-cli)"
+readme = "README.md"
+keywords = ["symbolic-regression", "equation-discovery", "machine-learning", "differentiable", "eml"]
+categories = ["science", "mathematics", "algorithms"]
+
+[dependencies]
+# Direct registry dep (NOT phop-core.workspace, which pins 0.1.1 — unpublished). "0.1" resolves to
+# the published phop-core 0.1.0; at publish-verify time cargo pulls it from crates.io.
+phop-core = "0.1"
