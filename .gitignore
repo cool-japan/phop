@@ -1,0 +1,15 @@
+/target
+**/*.rs.bk
+Cargo.lock.bak
+*.pyc
+__pycache__/
+/crates/phop-py/target
+/crates/phop-wasm/pkg
+/book
+.DS_Store
+target
+
+# LLM
+*/.claude/
+CLAUDE.md*/.worktrees/
+
