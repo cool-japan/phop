@@ -16,7 +16,7 @@ front end, harness, or demo around it.
 
 ## Status (2026-06-25)
 
-The first release (0.1.0) is being prepared. Everything already implemented (all six crates,
+0.1.0 has been released (see CHANGELOG.md); 0.1.1 is now in development. Everything already implemented (all six crates,
 the engine layers, GPU backends, the verified discovery pipeline, the PySR benchmark run, etc.)
 is recorded in **CHANGELOG.md**. This TODO lists only what is still **open**.
 
