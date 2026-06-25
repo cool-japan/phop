@@ -3,19 +3,19 @@
 # Modeled on `maturin generate-ci github`, but targeting the sub-crate manifest
 # `crates/phop-py/Cargo.toml` (the workspace root is not the package that ships).
 #
-# NOTE ON WHEEL COUNT — pyo3 0.29 is configured here WITHOUT abi3, so the produced
-# wheels are Python-version-specific (one wheel per interpreter per platform). We keep
-# this file simple by relying on maturin-action's default per-runner interpreter
-# handling. To collapse every platform down to a SINGLE portable abi3 wheel, enable the
-# pyo3 `abi3-py39` feature in crates/phop-py/Cargo.toml, e.g.:
-#     pyo3 = { version = "0.29", features = ["extension-module", "abi3-py39"] }
-# Do NOT change the crate from this workflow — that is a deliberate manifest decision.
+# WHEELS — pyo3 is configured WITH `abi3-py39` in crates/phop-py/Cargo.toml, so each
+# platform produces a SINGLE forward-compatible `cp39-abi3` wheel (works on CPython 3.9+).
+# abi3 also lets the linux-aarch64 manylinux cross build succeed without per-version
+# interpreter detection (a non-abi3 build there fails "Couldn't find any python
+# interpreters" unless maturin is given `--find-interpreter`, the scirs2-python approach).
 
 name: PyPI publish (phop-py)
 
 on:
-  release:
-    types: [published]
+  # Publish on a release tag push (publish.sh / 010.sh push `vX.Y.Z`) or a manual run.
+  push:
+    tags:
+      - 'v*'
   workflow_dispatch: {}
 
 permissions:
@@ -116,8 +116,8 @@ jobs:
     name: Publish to PyPI
     runs-on: ubuntu-latest
     needs: [linux, macos, windows, sdist]
-    # Publish on a real GitHub Release, or on a manual workflow_dispatch run.
-    if: ${{ github.event_name == 'release' || github.event_name == 'workflow_dispatch' }}
+    # Publish on a release tag push (refs/tags/v*) or a manual workflow_dispatch run.
+    if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/') }}
     permissions:
       id-token: write       # REQUIRED for Trusted Publishing (OIDC)
       contents: read
@@ -130,6 +130,8 @@ jobs:
           path: dist
       - name: Publish to PyPI (Trusted Publishing / OIDC)
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          skip-existing: true   # idempotent: silently skip a version already on PyPI
         # No `password:` — OIDC is used. `packages-dir` defaults to dist/.
 
       # -----------------------------------------------------------------------
