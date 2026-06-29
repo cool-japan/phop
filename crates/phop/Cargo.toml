@@ -1,8 +1,9 @@
 [package]
 name = "phop"
-# Seeded at the family's release version (0.1.0). Explicit (not version.workspace) so the
-# façade can be published at 0.1.0 while the workspace dev line is already at 0.1.1.
-version = "0.1.0"
+# Tracks the workspace release version like the sibling crates. (The 0.1.0 bootstrap — an
+# explicit `version = "0.1.0"` so the façade could ship at 0.1.0 while the dev line was
+# already 0.1.1 — is complete; from 0.1.1 on it publishes in lockstep with the workspace.)
+version.workspace = true
 edition.workspace = true
 license.workspace = true
 authors.workspace = true

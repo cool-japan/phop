@@ -1897,7 +1897,7 @@ checksum = "57c0d7b74b563b49d38dae00a0c37d4d6de9b432382b2892f0574ddcae73fd0a"
 
 [[package]]
 name = "phop"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "phop-core 0.1.0",
 ]
@@ -1973,7 +1973,7 @@ dependencies = [
 
 [[package]]
 name = "phop-py"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "numpy",
  "phop-core 0.1.1",

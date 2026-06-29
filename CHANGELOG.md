@@ -53,7 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `phop` CLI: `discover` (`--method enumerate|gumbel|gated|gated-warm|auto|rich`, `--format table|latex|rust|json`, `--certify`, `--units`, `--gpu`, `--analyze`, `--lambda-*`) and `predict` (reload a law from JSON and apply to new CSV).
 - Python bindings (`phop-py`, PyO3) with the GIL released and `.pyi` stubs.
-- WebAssembly bindings (`phop-wasm`): `discover_json` / `capabilities` / `set_panic_hook`, plus `discover_and_verify` running the whole discover → CAS analyze → e-graph canonicalize → certified range/root → SMT proof pipeline (OxiZ SMT solver included) client-side in wasm32; npm package `@cooljapan/phop`.
+- WebAssembly bindings (`phop-wasm`): `discover_json` / `capabilities` / `set_panic_hook`, plus `discover_and_verify` running the whole discover → CAS analyze → e-graph canonicalize → certified range/root → SMT proof pipeline (OxiZ SMT solver included) client-side in wasm32; npm package `@cooljapan/phop-wasm`.
 - Benchmark harness (`phop-bench`, criterion + Feynman-style recovery suite) and worked examples (`phop-examples`: exp growth, Gumbel exp, Kepler, Michaelis–Menten, Planck, Black–Scholes) with bundled CSVs.
 - README quick start and an mdBook (`docs/`) spanning theory → implementation → applications.
 

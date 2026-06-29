@@ -33,7 +33,7 @@ EML library. No C/FFI dependency.
 ## 🌐 Browser demo — discover **and prove** laws, with zero server
 
 phop compiles to WebAssembly, and so does its *entire verification stack*. The result
-([`crates/phop-wasm`](crates/phop-wasm), npm **`@cooljapan/phop`**) is a web page that **discovers a
+([`crates/phop-wasm`](crates/phop-wasm), npm **`@cooljapan/phop-wasm`**) is a web page that **discovers a
 closed-form law, canonicalizes it with a CAS, certifies its range/roots, and proves its properties
 with an SMT solver — all in the browser tab, with no backend, no install, and nothing stored.**
 

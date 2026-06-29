@@ -107,7 +107,7 @@ console.log(result.solutions[0]);   // { latex, pretty, mse, r2, certified_range
 `egraph` (e-graph canonicalization) and `smt` (OxiZ proofs) are opt-in so a minimal build stays tiny;
 the demo build enables both. The `certify` and `analyze` tiers need no feature.
 
-Published on npm as **`@cooljapan/phop`**. Part of the [phop](https://github.com/cool-japan/phop)
+Published on npm as **`@cooljapan/phop-wasm`**. Part of the [phop](https://github.com/cool-japan/phop)
 project.
 
 ## License
