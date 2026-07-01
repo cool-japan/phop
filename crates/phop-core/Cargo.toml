@@ -40,7 +40,7 @@ oxilean-kernel = { workspace = true, optional = true }
 # feature, which routes post-discovery LaTeX through scirs2-symbolic's e-graph for stronger forms.
 scirs2-symbolic = { workspace = true, optional = true }
 # Portable WebGPU/Metal/Vulkan forward-eval backend (f32). Optional: only with `gpu-wgpu`. Pinned
-# (in the workspace manifest) to the same wgpu 29 that scirs2-core's `wgpu_backend` uses so the
+# (in the workspace manifest) to the same wgpu 29 that scirs2-core's `wgpu` feature uses so the
 # device/buffer types unify.
 wgpu = { workspace = true, optional = true }
 # TensorLogic IR for the neuro-symbolic bridge. Optional: only with the `tensorlogic` feature.
@@ -70,7 +70,7 @@ egraph = ["dep:scirs2-symbolic"]
 parallel = ["scirs2-core/parallel"]
 # Portable GPU forward via wgpu (WebGPU/Metal/Vulkan/DX12), f32. Supplements the CUDA backend with a
 # cross-platform path; selected by `gpu_backend()` (CUDA → wgpu → CPU). Pulls wgpu + scirs2-core wgpu.
-gpu-wgpu = ["dep:wgpu", "scirs2-core/wgpu_backend"]
+gpu-wgpu = ["dep:wgpu", "scirs2-core/wgpu"]
 # Neuro-symbolic bridge: map a discovered law to a TensorLogic weighted logic rule via oxieml's
 # tensorlogic IR. Pulls oxieml's `tensorlogic` feature + tensorlogic-ir.
 tensorlogic = ["oxieml/tensorlogic", "dep:tensorlogic-ir"]

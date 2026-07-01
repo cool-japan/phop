@@ -26,6 +26,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "alloca"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e5a7d05ea6aea7e9e64d25b9156ba2fee3fdd659e34e41063cd2fc7cd020d7f4"
+dependencies = [
+ "cc",
+]
+
+[[package]]
 name = "allocator-api2"
 version = "0.2.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -439,10 +448,11 @@ dependencies = [
 
 [[package]]
 name = "criterion"
-version = "0.7.0"
+version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e1c047a62b0cc3e145fa84415a3191f628e980b194c2755aa12300a4e6cbd928"
+checksum = "950046b2aa2492f9a536f5f4f9a3de7b9e2476e575e05bd6c333371add4d98f3"
 dependencies = [
+ "alloca",
  "anes",
  "cast",
  "ciborium",
@@ -451,6 +461,7 @@ dependencies = [
  "itertools",
  "num-traits",
  "oorandom",
+ "page_size",
  "regex",
  "serde",
  "serde_json",
@@ -460,9 +471,9 @@ dependencies = [
 
 [[package]]
 name = "criterion-plot"
-version = "0.6.0"
+version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9b1bcc0dc7dfae599d84ad0b1a55f80cde8af3725da8313b528da95ef783e338"
+checksum = "d8d80a2f4f5b554395e47b5d8305bc3d27813bacb73493eb1001e8f76dae29ea"
 dependencies = [
  "cast",
  "itertools",
@@ -1617,9 +1628,9 @@ dependencies = [
 
 [[package]]
 name = "oxicuda"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2e5dcf4566cb405867ffc83541d5d0e4beec139ade83d870036f2003d3cbf11d"
+checksum = "e31e4b0c229e979e4d5729316deb8f13c46141841bd1b2eb0af2758de45124c3"
 dependencies = [
  "half",
  "oxicuda-backend",
@@ -1631,15 +1642,15 @@ dependencies = [
 
 [[package]]
 name = "oxicuda-backend"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4263e40447905544e0cf5da0033aad9ee7c6a98de875eae82a74c759b8f22d0d"
+checksum = "65929b5659377e5aacce26643b51c8c1b93e49ae8ac18a6fe09c8930779fb3f3"
 
 [[package]]
 name = "oxicuda-driver"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b951052812be94a5075808e9acb0f2314d40071cb11dc616870ab0aa7d98b4ff"
+checksum = "3de7953118cf0996fa378cbbb884d05c9a360a940167b547cd225db175929f43"
 dependencies = [
  "libloading 0.9.0",
  "thiserror 2.0.18",
@@ -1648,9 +1659,9 @@ dependencies = [
 
 [[package]]
 name = "oxicuda-launch"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5c17639b505dbf28c17cf1817f91e1ef2e921b5d1eec10a8d11b4e23efaa7152"
+checksum = "5bf37bcc4b862595cd958e1932abfed2a5fcf6df98921adc1afc500493dc2772"
 dependencies = [
  "oxicuda-driver",
  "oxicuda-memory",
@@ -1659,9 +1670,9 @@ dependencies = [
 
 [[package]]
 name = "oxicuda-memory"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c71bdf4ded31dca85735518408e1abb63374ea3ca5cdd95d2a4850cda35f373a"
+checksum = "fddba371cb883fb5179723253b34b1379ae65c66838f9ac20a6caf4b4b21d6b5"
 dependencies = [
  "oxicuda-driver",
  "tracing",
@@ -1669,9 +1680,9 @@ dependencies = [
 
 [[package]]
 name = "oxicuda-metal"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e609c40769a3bb85ce42ca00bbbbba24c04f467bf8602e158d31a9ede90410a6"
+checksum = "fcf7a29b5ae8d8722b0ad36856a660be88fa223ad0401538c3cd88d3f4b9ed84"
 dependencies = [
  "metal",
  "num-complex",
@@ -1682,9 +1693,9 @@ dependencies = [
 
 [[package]]
 name = "oxicuda-ptx"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ea802988ef437d56c2fc03a19aa7386f940551b5cadad30d56af60f33e037779"
+checksum = "90a7529d0ec2eb5b2c039842d3a122e7105e953dfdc21cb0e16582f540c7ad8b"
 dependencies = [
  "oxicuda-driver",
  "thiserror 2.0.18",
@@ -1867,6 +1878,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "page_size"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "30d5b2194ed13191c1999ae0704b7839fb18384fa22e49b57eeaa97d79ce40da"
+dependencies = [
+ "libc",
+ "winapi",
+]
+
+[[package]]
 name = "parking_lot"
 version = "0.12.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1908,7 +1929,7 @@ version = "0.1.1"
 dependencies = [
  "criterion",
  "phop-core 0.1.1",
- "scirs2-core",
+ "scirs2-core 0.6.0",
 ]
 
 [[package]]
@@ -1933,9 +1954,9 @@ dependencies = [
  "csv",
  "libc",
  "oxieml",
- "scirs2-autograd",
- "scirs2-core",
- "scirs2-optimize",
+ "scirs2-autograd 0.5.1",
+ "scirs2-core 0.5.1",
+ "scirs2-optimize 0.5.1",
  "serde",
  "serde_json",
  "thiserror 2.0.18",
@@ -1952,9 +1973,9 @@ dependencies = [
  "oxicuda-metal",
  "oxieml",
  "oxilean-kernel",
- "scirs2-autograd",
- "scirs2-core",
- "scirs2-optimize",
+ "scirs2-autograd 0.6.0",
+ "scirs2-core 0.6.0",
+ "scirs2-optimize 0.6.0",
  "scirs2-symbolic",
  "serde",
  "serde_json",
@@ -1968,7 +1989,7 @@ name = "phop-examples"
 version = "0.1.1"
 dependencies = [
  "phop-core 0.1.1",
- "scirs2-core",
+ "scirs2-core 0.6.0",
 ]
 
 [[package]]
@@ -1978,7 +1999,7 @@ dependencies = [
  "numpy",
  "phop-core 0.1.1",
  "pyo3",
- "scirs2-core",
+ "scirs2-core 0.6.0",
 ]
 
 [[package]]
@@ -1990,7 +2011,7 @@ dependencies = [
  "getrandom 0.3.4",
  "getrandom 0.4.3",
  "phop-core 0.1.1",
- "scirs2-core",
+ "scirs2-core 0.6.0",
  "serde",
  "serde-wasm-bindgen",
  "serde_json",
@@ -2524,7 +2545,30 @@ dependencies = [
  "once_cell",
  "parking_lot",
  "rustc-hash 2.1.2",
- "scirs2-core",
+ "scirs2-core 0.5.1",
+ "serde",
+ "serde_json",
+ "special",
+ "thiserror 2.0.18",
+ "toml",
+ "uuid",
+]
+
+[[package]]
+name = "scirs2-autograd"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "82ab3d4b616eeaff523c250a288a26f2d329a1ca9999060b5ce4543e4bf7875c"
+dependencies = [
+ "approx",
+ "libc",
+ "matrixmultiply",
+ "num-integer",
+ "num-traits",
+ "once_cell",
+ "parking_lot",
+ "rustc-hash 2.1.2",
+ "scirs2-core 0.6.0",
  "serde",
  "serde_json",
  "special",
@@ -2538,6 +2582,46 @@ name = "scirs2-core"
 version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a4b0d90e4183cf6757a52f6ab5bcc979a41c0f3b44613aaf432d18cdda49b650"
+dependencies = [
+ "chrono",
+ "crc32fast",
+ "crossbeam",
+ "crossbeam-deque",
+ "crossbeam-utils",
+ "getrandom 0.3.4",
+ "getrandom 0.4.3",
+ "ndarray",
+ "ndarray-rand",
+ "num-complex",
+ "num-integer",
+ "num-traits",
+ "num_cpus",
+ "once_cell",
+ "oxiarc-lz4",
+ "oxiarc-zstd",
+ "oxiblas-blas",
+ "oxiblas-lapack",
+ "oxiblas-ndarray",
+ "parking_lot",
+ "rand 0.10.1",
+ "rand_chacha 0.10.0",
+ "rand_distr 0.6.0",
+ "rayon",
+ "regex",
+ "serde",
+ "serde_json",
+ "statrs",
+ "thiserror 2.0.18",
+ "uuid",
+ "wide 1.5.0",
+ "windows-sys",
+]
+
+[[package]]
+name = "scirs2-core"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8c212b8f57346fa3fe01400d9a2d9a96caea711e15ca663cee4e2e445b76c9d4"
 dependencies = [
  "chrono",
  "crc32fast",
@@ -2585,7 +2669,22 @@ dependencies = [
  "half",
  "num_cpus",
  "oxicode",
- "scirs2-core",
+ "scirs2-core 0.5.1",
+ "serde",
+ "thiserror 2.0.18",
+]
+
+[[package]]
+name = "scirs2-linalg"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4ab8f2defe212205e1fc83e3b922b55b7c3416ec485150b9c97997c9a3b358c3"
+dependencies = [
+ "approx",
+ "half",
+ "num_cpus",
+ "oxicode",
+ "scirs2-core 0.6.0",
  "serde",
  "thiserror 2.0.18",
 ]
@@ -2596,10 +2695,25 @@ version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "62004ee2d77ddcd7dedc7f463e7c392ed329ef2e2cc3662f5625d80bd2d4b78e"
 dependencies = [
- "scirs2-core",
- "scirs2-linalg",
- "scirs2-sparse",
- "scirs2-stats",
+ "scirs2-core 0.5.1",
+ "scirs2-linalg 0.5.1",
+ "scirs2-sparse 0.5.1",
+ "scirs2-stats 0.5.1",
+ "serde",
+ "statrs",
+ "thiserror 2.0.18",
+]
+
+[[package]]
+name = "scirs2-optimize"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7c1fb84b7ab15cbeb5bef631648857ebeca06313519ee618d09f6cd3f03cadaa"
+dependencies = [
+ "scirs2-core 0.6.0",
+ "scirs2-linalg 0.6.0",
+ "scirs2-sparse 0.6.0",
+ "scirs2-stats 0.6.0",
  "serde",
  "statrs",
  "thiserror 2.0.18",
@@ -2613,7 +2727,19 @@ checksum = "a19c7be3ece02a03269646679314f58e26ea9f076e3a889ef18c436bc3595507"
 dependencies = [
  "log",
  "num_cpus",
- "scirs2-core",
+ "scirs2-core 0.5.1",
+ "thiserror 2.0.18",
+]
+
+[[package]]
+name = "scirs2-sparse"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b726a5ee5b1b479ab6528a049372956b4c89e15b78f77977330bde0b08f1842e"
+dependencies = [
+ "log",
+ "num_cpus",
+ "scirs2-core 0.6.0",
  "thiserror 2.0.18",
 ]
 
@@ -2628,8 +2754,27 @@ dependencies = [
  "memmap2",
  "num_cpus",
  "quickcheck",
- "scirs2-core",
- "scirs2-linalg",
+ "scirs2-core 0.5.1",
+ "scirs2-linalg 0.5.1",
+ "serde",
+ "serde_json",
+ "statrs",
+ "thiserror 2.0.18",
+]
+
+[[package]]
+name = "scirs2-stats"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4355be35f3639a6a803144e298aacbdde98d146d27596081c2e9591508b3671b"
+dependencies = [
+ "chrono",
+ "crossbeam",
+ "memmap2",
+ "num_cpus",
+ "quickcheck",
+ "scirs2-core 0.6.0",
+ "scirs2-linalg 0.6.0",
  "serde",
  "serde_json",
  "statrs",
@@ -2638,9 +2783,9 @@ dependencies = [
 
 [[package]]
 name = "scirs2-symbolic"
-version = "0.5.1"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "52d615ec84c7e85f3228f6c8a74ac3fe86d6957176a230c5281d91fd3fe18787"
+checksum = "c7d048a01527d78cd4eeb37590edd396f8bb0bb6b6a780707e31bb09885732ee"
 dependencies = [
  "ahash",
  "ndarray",
