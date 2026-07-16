@@ -39,7 +39,7 @@ scirs2-linalg = "0.6.1"
 # Canonical EML-tree implementation
 oxieml = "0.1.3"
 # Pure-Rust Lean kernel (proof-carrying tier; opt-in via the `lean` feature)
-oxilean-kernel = "0.1.2"
+oxilean-kernel = "0.1.3"
 # Portable GPU forward backend (opt-in via the `gpu-wgpu` feature). Pinned to the same wgpu 29 that
 # scirs2-core's `wgpu` feature uses so device/buffer types unify across the dependency graph.
 wgpu = "29.0"
