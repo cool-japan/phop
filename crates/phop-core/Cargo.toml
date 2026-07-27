@@ -25,14 +25,14 @@ csv.workspace = true
 # CUDA GPU backend (Layer A forward eval) via the cool-japan oxicuda stack. Optional: only
 # pulled in when the `gpu-cuda` feature is enabled. Default features (driver, memory, launch)
 # are sufficient — we supply hand-written PTX and load it through the driver JIT, so no NVRTC.
-oxicuda = { version = "0.5.2", optional = true }
+oxicuda = { version = "0.5.3", optional = true }
 # Apple Metal GPU backend (Layer A forward eval), macOS-only. Optional: only pulled in when the
 # `gpu-metal` feature is enabled. Needs BOTH crates: the `metal.rs` engine calls the inherent
 # `MetalBackend::launch_custom_kernel` plus the `oxicuda_backend::ComputeBackend` alloc/copy/free
 # methods, and that trait is not re-exported by oxicuda-metal — so we depend on oxicuda-backend
 # directly too. Both resolve from crates.io at the published 0.3 line.
-oxicuda-metal = { version = "0.5.2", optional = true }
-oxicuda-backend = { version = "0.5.2", optional = true }
+oxicuda-metal = { version = "0.5.3", optional = true }
+oxicuda-backend = { version = "0.5.3", optional = true }
 # Pure-Rust Lean kernel for the proof-carrying tier. Optional: only pulled in with the `lean`
 # feature. We depend on the kernel crate directly (the `oxilean` facade just re-exports it).
 oxilean-kernel = { workspace = true, optional = true }
