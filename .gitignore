@@ -1,6 +1,7 @@
 /target
 **/*.rs.bk
 Cargo.lock.bak
+Cargo.lock
 *.pyc
 __pycache__/
 /crates/phop-py/target
