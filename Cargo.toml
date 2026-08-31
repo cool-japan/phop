@@ -45,7 +45,7 @@ oxilean-kernel = "0.1.3"
 wgpu = "29.0"
 # TensorLogic IR (opt-in via the `tensorlogic` feature): the neuro-symbolic target a discovered law
 # is mapped into as a weighted logic rule. Matches the version oxieml's `tensorlogic` feature uses.
-tensorlogic-ir = "0.1.1"
+tensorlogic-ir = "0.1.2"
 # General
 rayon = "1.12"
 thiserror = "2"
